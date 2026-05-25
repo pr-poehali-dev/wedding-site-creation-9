@@ -11,11 +11,11 @@ const NAV_ITEMS = [
 ];
 
 const PROGRAM = [
-  { time: '15:00', title: 'Церемония', desc: 'Торжественная регистрация брака в Дворце бракосочетания', icon: 'Heart' },
-  { time: '16:30', title: 'Фотосессия', desc: 'Прогулка и съёмка в живописных местах города', icon: 'Camera' },
-  { time: '18:00', title: 'Банкет', desc: 'Торжественный ужин в Тортуга Вилла · Воронежская ул., 33к1, Уфа', icon: 'UtensilsCrossed' },
-  { time: '19:30', title: 'Первый танец', desc: 'Вальс молодожёнов и танцевальная программа', icon: 'Music' },
-  { time: '23:00', title: 'Завершение', desc: 'Запуск фонариков и прощание с гостями', icon: 'Sparkles' },
+  { time: '15:00', title: 'Церемония', desc: 'Торжественная регистрация брака в Дворце бракосочетания', icon: 'Heart', mapUrl: null },
+  { time: '16:30', title: 'Фотосессия', desc: 'Прогулка и съёмка в живописных местах города', icon: 'Camera', mapUrl: null },
+  { time: '18:00', title: 'Банкет', desc: 'Тортуга Вилла · Воронежская ул., 33к1, Уфа', icon: 'UtensilsCrossed', mapUrl: 'https://yandex.ru/maps/?text=Воронежская+улица+33к1+Уфа' },
+  { time: '19:30', title: 'Первый танец', desc: 'Вальс молодожёнов и танцевальная программа', icon: 'Music', mapUrl: null },
+  { time: '23:00', title: 'Завершение', desc: 'Запуск фонариков и прощание с гостями', icon: 'Sparkles', mapUrl: null },
 ];
 
 export default function Index() {
@@ -235,6 +235,17 @@ export default function Index() {
                       <span className="font-montserrat text-xs text-[hsl(var(--rose))] tracking-widest">{item.time}</span>
                       <h3 className="font-cormorant text-2xl text-[hsl(var(--dark))] mt-1">{item.title}</h3>
                       <p className="font-montserrat text-xs text-[hsl(var(--muted-foreground))] mt-2 leading-relaxed">{item.desc}</p>
+                      {item.mapUrl && (
+                        <a
+                          href={item.mapUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 mt-3 font-montserrat text-xs text-[hsl(var(--rose))] hover:underline"
+                        >
+                          <Icon name="MapPin" size={12} />
+                          Открыть на карте
+                        </a>
+                      )}
                     </div>
                   </div>
 
