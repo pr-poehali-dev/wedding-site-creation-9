@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 
-const HERO_BG = 'https://cdn.poehali.dev/projects/1970ded7-737a-48ec-97af-3d20cacbf698/files/8bb60b18-321a-4279-a048-38ea64e3be0a.jpg';
+const HERO_BG = 'https://cdn.poehali.dev/projects/1970ded7-737a-48ec-97af-3d20cacbf698/bucket/b5671be8-7d51-4f7c-8f81-cc6ed7e64ea1.jpg';
 
 const NAV_ITEMS = [
   { id: 'hero', label: 'Главная' },
@@ -114,10 +114,10 @@ export default function Index() {
       {/* Hero */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${HERO_BG})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/10 to-[hsl(var(--cream))]/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-[hsl(var(--cream))]/70" />
 
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {['top-[15%] left-[10%]', 'top-[25%] right-[12%]', 'top-[60%] left-[5%]', 'top-[40%] right-[8%]'].map((pos, i) => (
