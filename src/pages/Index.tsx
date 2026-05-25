@@ -69,7 +69,7 @@ export default function Index() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-[hsl(var(--blush))]">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <span className="font-cormorant text-2xl text-[hsl(var(--rose))] italic">А & М</span>
+          <span className="font-cormorant text-2xl text-[hsl(var(--rose))] italic">Р & М</span>
 
           <ul className="hidden md:flex items-center gap-8">
             {NAV_ITEMS.map(item => (
@@ -136,7 +136,7 @@ export default function Index() {
             мы выходим замуж
           </p>
           <h1 className="font-cormorant font-light text-7xl md:text-9xl text-[hsl(var(--dark))] leading-none mb-4">
-            Анна<br />&<br />Михаил
+            Рустам<br />&<br />Мария
           </h1>
           <div className="divider-rose my-8 text-[hsl(var(--rose))]">
             <span className="font-cormorant italic text-xl text-[hsl(var(--rose))]">6 сентября 2025</span>
@@ -189,7 +189,7 @@ export default function Index() {
               <div className="w-12 h-12 rounded-full bg-[hsl(var(--blush))] flex items-center justify-center mb-6">
                 <span className="text-2xl">👰</span>
               </div>
-              <h3 className="font-cormorant text-3xl text-[hsl(var(--dark))]">Анна</h3>
+              <h3 className="font-cormorant text-3xl text-[hsl(var(--dark))]">Мария</h3>
               <p className="font-montserrat text-sm leading-relaxed text-[hsl(var(--muted-foreground))]">
                 Люблю утренний кофе с книгой, долгие прогулки по набережной и уютные вечера в хорошей компании.
                 Верю, что самые важные моменты в жизни — это те, что мы создаём вместе с любимыми людьми.
@@ -199,7 +199,7 @@ export default function Index() {
               <div className="w-12 h-12 rounded-full bg-[hsl(var(--blush))] flex items-center justify-center mb-6">
                 <span className="text-2xl">🤵</span>
               </div>
-              <h3 className="font-cormorant text-3xl text-[hsl(var(--dark))]">Михаил</h3>
+              <h3 className="font-cormorant text-3xl text-[hsl(var(--dark))]">Рустам</h3>
               <p className="font-montserrat text-sm leading-relaxed text-[hsl(var(--muted-foreground))]">
                 Обожаю путешествия, кулинарные эксперименты и джазовую музыку. Три года назад встретил человека,
                 который изменил мой взгляд на мир и стал самым важным в нём.
@@ -382,7 +382,7 @@ export default function Index() {
 
       {/* Footer */}
       <footer className="bg-[hsl(var(--dark))] py-12 px-6 text-center">
-        <p className="font-cormorant italic text-3xl text-[hsl(var(--blush))] mb-2">Анна & Михаил</p>
+        <p className="font-cormorant italic text-3xl text-[hsl(var(--blush))] mb-2">Рустам & Мария</p>
         <p className="font-montserrat text-xs tracking-widest uppercase text-[hsl(var(--blush))]/50">
           6 сентября 2025 · Санкт-Петербург
         </p>
