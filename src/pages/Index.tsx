@@ -403,6 +403,11 @@ export default function Index() {
 
       {/* Footer */}
       <footer className="bg-[hsl(var(--dark))] py-12 px-6 text-center">
+        <img
+          src="https://cdn.poehali.dev/projects/1970ded7-737a-48ec-97af-3d20cacbf698/bucket/6d23c700-973f-4e0e-a831-c77c43520a07.png"
+          alt="РМ монограмма"
+          className="w-16 h-16 object-contain mx-auto mb-4 opacity-70"
+        />
         <p className="font-cormorant italic text-3xl text-[hsl(var(--blush))] mb-2">Рустам & Мария</p>
         <p className="font-montserrat text-xs tracking-widest uppercase text-[hsl(var(--blush))]/50">
           28 августа 2026 · Уфа
