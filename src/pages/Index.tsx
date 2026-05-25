@@ -82,7 +82,7 @@ export default function Index() {
     {!showSite && (
       <div
         className={`fixed inset-0 z-[100] flex items-center justify-center ${envelopeState === 'done' ? 'envelope-fadeout' : ''}`}
-        style={{ background: 'linear-gradient(135deg, #c8b89a 0%, #e8ddd0 50%, #d4c4b0 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #2d4a3e 0%, #3d5e50 30%, #e8ddd0 70%, #d4c4a8 100%)' }}
       >
         {/* Floating petals bg */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
