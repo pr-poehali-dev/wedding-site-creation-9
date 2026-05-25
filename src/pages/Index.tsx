@@ -18,13 +18,26 @@ const PROGRAM = [
   { time: '23:00', title: 'Завершение', desc: 'Запуск фонариков и прощание с гостями', icon: 'Sparkles', mapUrl: null },
 ];
 
+const MONOGRAM = 'https://cdn.poehali.dev/projects/1970ded7-737a-48ec-97af-3d20cacbf698/bucket/6d23c700-973f-4e0e-a831-c77c43520a07.png';
+
 export default function Index() {
+  const [envelopeState, setEnvelopeState] = useState<'idle' | 'opening' | 'done'>('idle');
+  const [showSite, setShowSite] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [form, setForm] = useState({ name: '', phone: '', attending: 'yes', guests: '1', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [guestList, setGuestList] = useState<{ name: string; message: string; attending: string }[]>([]);
   const [daysLeft, setDaysLeft] = useState(0);
+
+  const handleOpenEnvelope = () => {
+    if (envelopeState !== 'idle') return;
+    setEnvelopeState('opening');
+    setTimeout(() => {
+      setEnvelopeState('done');
+      setTimeout(() => setShowSite(true), 600);
+    }, 1400);
+  };
 
   useEffect(() => {
     const weddingDate = new Date('2026-08-28');
@@ -64,7 +77,118 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-[hsl(var(--cream))]">
+    <>
+    {/* Envelope screen */}
+    {!showSite && (
+      <div
+        className={`fixed inset-0 z-[100] flex items-center justify-center ${envelopeState === 'done' ? 'envelope-fadeout' : ''}`}
+        style={{ background: 'linear-gradient(135deg, #c8b89a 0%, #e8ddd0 50%, #d4c4b0 100%)' }}
+      >
+        {/* Floating petals bg */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {['10% 15%','85% 10%','5% 70%','90% 65%','50% 5%','20% 90%'].map((pos, i) => (
+            <div key={i} className="absolute text-white/30 text-4xl animate-float" style={{ top: pos.split(' ')[1], left: pos.split(' ')[0], animationDelay: `${i * 0.5}s` }}>🌸</div>
+          ))}
+        </div>
+
+        <div className="relative flex flex-col items-center" style={{ perspective: '800px' }}>
+          {/* Envelope body */}
+          <div
+            className="relative cursor-pointer select-none"
+            style={{ width: 320, height: 220 }}
+            onClick={handleOpenEnvelope}
+          >
+            {/* Envelope base */}
+            <div className="absolute inset-0 rounded-2xl shadow-2xl overflow-hidden"
+              style={{ background: 'linear-gradient(160deg, #f5efe8 60%, #e8ddd0 100%)', border: '1.5px solid #c8a97a' }}>
+
+              {/* Bottom triangle */}
+              <div className="absolute bottom-0 left-0 right-0" style={{
+                width: 0, height: 0, margin: '0 auto',
+                borderLeft: '160px solid transparent',
+                borderRight: '160px solid transparent',
+                borderBottom: '110px solid #dfd3c3',
+              }} />
+
+              {/* Left triangle */}
+              <div className="absolute left-0 top-0 bottom-0" style={{
+                width: 0, height: 0,
+                borderTop: '110px solid #e8e0d5',
+                borderBottom: '110px solid #e8e0d5',
+                borderRight: '160px solid transparent',
+              }} />
+
+              {/* Right triangle */}
+              <div className="absolute right-0 top-0 bottom-0" style={{
+                width: 0, height: 0,
+                borderTop: '110px solid #e2d8cc',
+                borderBottom: '110px solid #e2d8cc',
+                borderLeft: '160px solid transparent',
+              }} />
+
+              {/* Gold border line */}
+              <div className="absolute inset-3 rounded-xl pointer-events-none" style={{ border: '1px solid #c8a97a55' }} />
+
+              {/* Monogram wax seal */}
+              <div className="absolute inset-0 flex items-center justify-center z-10">
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
+                    style={{ background: 'linear-gradient(135deg, #c8a97a, #a07848)', border: '2px solid #d4b98a' }}>
+                    <img src={MONOGRAM} alt="РМ" className="w-10 h-10 object-contain" style={{ filter: 'brightness(0) invert(1)' }} />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Envelope lid */}
+            <div
+              className={`envelope-lid absolute top-0 left-0 right-0 z-20 ${envelopeState !== 'idle' ? 'open' : ''}`}
+              style={{ height: '50%' }}
+            >
+              <div style={{
+                width: 0, height: 0,
+                borderLeft: '160px solid transparent',
+                borderRight: '160px solid transparent',
+                borderTop: '110px solid #d4c4b0',
+                filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))',
+              }} />
+            </div>
+
+            {/* Letter rising */}
+            {envelopeState === 'opening' && (
+              <div className="letter-rise absolute left-1/2 -translate-x-1/2 z-10" style={{ bottom: 30 }}>
+                <div className="bg-white rounded-lg shadow-xl px-6 py-4 text-center" style={{ width: 200, border: '1px solid #c8a97a55' }}>
+                  <img src={MONOGRAM} alt="РМ" className="w-10 h-10 object-contain mx-auto mb-2 opacity-80" />
+                  <p className="font-cormorant italic text-sm text-[hsl(var(--dark))]">Рустам & Мария</p>
+                  <p className="font-montserrat text-[10px] text-[hsl(var(--muted-foreground))] mt-1">28 августа 2026</p>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Invitation text */}
+          <div className="mt-10 text-center">
+            <p className="font-cormorant italic text-3xl text-white/90 mb-2" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
+              Приглашение на свадьбу
+            </p>
+            <p className="font-montserrat text-xs tracking-widest uppercase text-white/60 mb-6">
+              Рустам & Мария · 28 августа 2026
+            </p>
+            {envelopeState === 'idle' && (
+              <button
+                onClick={handleOpenEnvelope}
+                className="font-montserrat text-xs tracking-widest uppercase px-8 py-3 rounded-full border border-white/50 text-white/80 hover:bg-white/20 transition-all animate-bounce"
+              >
+                Открыть конверт
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    )}
+
+    {/* Main site */}
+    <div className={`min-h-screen bg-[hsl(var(--cream))] ${showSite ? 'site-reveal' : 'opacity-0 pointer-events-none'}`}>
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-[hsl(var(--blush))]">
@@ -415,5 +539,6 @@ export default function Index() {
         <div className="mt-6 text-[hsl(var(--rose))]/60 text-xl">🌸</div>
       </footer>
     </div>
+    </>
   );
 }
