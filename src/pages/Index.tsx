@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 
-const HERO_BG = 'https://cdn.poehali.dev/projects/1970ded7-737a-48ec-97af-3d20cacbf698/bucket/7caa8ce7-085e-48b8-b090-84c47c83b143.jpg';
+const HERO_BG = 'https://cdn.poehali.dev/projects/1970ded7-737a-48ec-97af-3d20cacbf698/files/f71f84ef-b5d9-477e-ab4c-68017cfe3dc2.jpg';
 
 const NAV_ITEMS = [
   { id: 'hero', label: 'Главная' },
