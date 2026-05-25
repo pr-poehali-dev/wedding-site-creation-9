@@ -114,10 +114,15 @@ export default function Index() {
       {/* Hero */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${HERO_BG})` }}
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${HERO_BG})`,
+            backgroundSize: '100% 100%',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-[hsl(var(--cream))]/70" />
+        <div className="absolute inset-0 bg-white/10" />
 
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {['top-[15%] left-[10%]', 'top-[25%] right-[12%]', 'top-[60%] left-[5%]', 'top-[40%] right-[8%]'].map((pos, i) => (
