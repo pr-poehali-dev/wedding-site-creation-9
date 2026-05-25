@@ -69,7 +69,7 @@ export default function Index() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-[hsl(var(--blush))]">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <span className="font-cormorant text-2xl text-[hsl(var(--rose))] italic">Р & М</span>
+          <img src="https://cdn.poehali.dev/projects/1970ded7-737a-48ec-97af-3d20cacbf698/bucket/6d23c700-973f-4e0e-a831-c77c43520a07.png" alt="РМ" className="h-10 w-10 object-contain" />
 
           <ul className="hidden md:flex items-center gap-8">
             {NAV_ITEMS.map(item => (
@@ -137,6 +137,11 @@ export default function Index() {
         </div>
 
         <div className="relative text-center px-6 animate-fadeIn">
+          <img
+            src="https://cdn.poehali.dev/projects/1970ded7-737a-48ec-97af-3d20cacbf698/bucket/6d23c700-973f-4e0e-a831-c77c43520a07.png"
+            alt="РМ монограмма"
+            className="w-28 h-28 object-contain mx-auto mb-4 opacity-90"
+          />
           <p className="font-montserrat text-xs tracking-[0.4em] uppercase text-[hsl(var(--rose))] mb-6">
             мы выходим замуж
           </p>
