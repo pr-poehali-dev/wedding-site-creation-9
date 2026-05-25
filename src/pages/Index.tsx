@@ -142,7 +142,7 @@ export default function Index() {
             <span className="font-cormorant italic text-xl text-[hsl(var(--rose))]">28 августа 2026</span>
           </div>
           <p className="font-montserrat text-sm text-[hsl(var(--muted-foreground))] tracking-wider mb-10">
-            г. Санкт-Петербург
+            г. Уфа
           </p>
 
           {daysLeft > 0 && (
@@ -384,7 +384,7 @@ export default function Index() {
       <footer className="bg-[hsl(var(--dark))] py-12 px-6 text-center">
         <p className="font-cormorant italic text-3xl text-[hsl(var(--blush))] mb-2">Рустам & Мария</p>
         <p className="font-montserrat text-xs tracking-widest uppercase text-[hsl(var(--blush))]/50">
-          28 августа 2026 · Санкт-Петербург
+          28 августа 2026 · Уфа
         </p>
         <div className="mt-6 text-[hsl(var(--rose))]/60 text-xl">🌸</div>
       </footer>
