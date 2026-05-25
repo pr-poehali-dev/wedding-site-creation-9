@@ -27,7 +27,7 @@ export default function Index() {
   const [daysLeft, setDaysLeft] = useState(0);
 
   useEffect(() => {
-    const weddingDate = new Date('2025-09-06');
+    const weddingDate = new Date('2026-08-28');
     const now = new Date();
     const diff = Math.ceil((weddingDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
     setDaysLeft(diff > 0 ? diff : 0);
@@ -139,7 +139,7 @@ export default function Index() {
             Рустам<br />&<br />Мария
           </h1>
           <div className="divider-rose my-8 text-[hsl(var(--rose))]">
-            <span className="font-cormorant italic text-xl text-[hsl(var(--rose))]">6 сентября 2025</span>
+            <span className="font-cormorant italic text-xl text-[hsl(var(--rose))]">28 августа 2026</span>
           </div>
           <p className="font-montserrat text-sm text-[hsl(var(--muted-foreground))] tracking-wider mb-10">
             г. Санкт-Петербург
@@ -256,7 +256,7 @@ export default function Index() {
           <p className="font-montserrat text-xs tracking-[0.4em] uppercase text-[hsl(var(--rose))] mb-4">Ваш ответ</p>
           <h2 className="font-cormorant font-light text-5xl md:text-6xl text-[hsl(var(--dark))] mb-4">Гостевая книга</h2>
           <p className="font-montserrat text-sm text-[hsl(var(--muted-foreground))] mb-12">
-            Пожалуйста, подтвердите своё присутствие до 1 августа 2025 года
+            Пожалуйста, подтвердите своё присутствие до 1 августа 2026 года
           </p>
 
           {submitted ? (
@@ -384,7 +384,7 @@ export default function Index() {
       <footer className="bg-[hsl(var(--dark))] py-12 px-6 text-center">
         <p className="font-cormorant italic text-3xl text-[hsl(var(--blush))] mb-2">Рустам & Мария</p>
         <p className="font-montserrat text-xs tracking-widest uppercase text-[hsl(var(--blush))]/50">
-          6 сентября 2025 · Санкт-Петербург
+          28 августа 2026 · Санкт-Петербург
         </p>
         <div className="mt-6 text-[hsl(var(--rose))]/60 text-xl">🌸</div>
       </footer>
